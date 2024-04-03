@@ -6,30 +6,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./index-page.component.scss']
 })
 export class IndexPageComponent {
-  getProductById(productId: number): any {
-    throw new Error('Method not implemented.');
-  }
 
   getProducts() {
     return [
       {
-        productId: 1 ,
+        productId: 1,
         imgSrc: './assets/kaniva1.jpg',
         name: 'Kaniva : สูตรเนื้อไก่ 1.5kg',
         price: 235
       },
       {
-        productId: 2 ,
+        productId: 2,
         imgSrc: './assets/kaniva2.jpg',
         name: 'Kaniva : สูตรแซลมอน 11kg',
         price: 1390
       },
       {
-        productId: 3 ,
+        productId: 3,
         imgSrc: './assets/kaniva3.jpg',
         name: 'Kaniva : สูตรเนื้อแกะ 12kg',
         price: 1490
       }
     ];
   }
+
 }

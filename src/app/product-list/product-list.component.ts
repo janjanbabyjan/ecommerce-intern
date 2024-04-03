@@ -10,14 +10,10 @@ import { Router } from '@angular/router';
 export class ProductListComponent implements OnInit {
   products: any;
 
-  constructor(private indexPageComponent: IndexPageComponent, private router: Router) {
+  constructor(private indexPageComponent: IndexPageComponent) {
 
   }
 
-  navigateToProductDetail(productId: number) {
-    this.router.navigate(['/products', productId]);
-  }
-  
   ngOnInit(): void {
     this.products = this.indexPageComponent.getProducts();
   }

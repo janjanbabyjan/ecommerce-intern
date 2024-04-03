@@ -1,5 +1,5 @@
 <div class="container d-flex justify-content-between mt-5">
-    <div class="card" style="width: 18rem;" *ngFor="let product of products" (click)="navigateToProductDetail(product.productId)">
+    <div class="card" style="width: 18rem;" *ngFor="let product of products">
         <div class="imgClass" style="width: 100%;">
             <img [src]="product.imgSrc" alt="Product Image" style="width: 100%;">
         </div>

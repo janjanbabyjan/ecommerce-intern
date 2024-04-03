@@ -4,7 +4,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { IndexPageComponent } from './index-page/index-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductListComponent } from './product-list/product-list.component';
-
+import { AccountComponent } from './account/account.component';
 const routes: Routes = [
   {
     path: '',
@@ -22,7 +22,12 @@ const routes: Routes = [
     children: []
   },
   {
-    path: '**', redirectTo: 'home', pathMatch: 'full'
+    path: 'account',
+    component: AccountComponent,
+    children: []
+  },
+  {
+    path: '**', redirectTo: 'index', pathMatch: 'full'
   }
 ];
 
