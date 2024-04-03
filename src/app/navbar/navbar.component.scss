@@ -1,0 +1,12 @@
+nav {
+    font-family: "Noto Sans Thai", sans-serif;
+
+    .navbar-nav {
+        .nav-link {
+            &:hover {
+                color: #FFBF51 !important;
+            }
+        }
+    }
+
+}
