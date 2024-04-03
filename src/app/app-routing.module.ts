@@ -3,28 +3,24 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { IndexPageComponent } from './index-page/index-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo:'/index',
-    pathMatch:'full'
+    redirectTo: '/index',
+    pathMatch: 'full'
   },
   {
     path: 'login',
     component: LoginPageComponent,
-    children:[]
+    children: []
   },
   {
     path: 'index',
-    component:IndexPageComponent,
-    children:[]
+    component: IndexPageComponent,
+    children: []
   },
-  // {
-  //   path: 'navbar',
-  //   component: NavbarComponent,
-  //   children:[]
-  // },
   {
     path: '**', redirectTo: 'home', pathMatch: 'full'
   }

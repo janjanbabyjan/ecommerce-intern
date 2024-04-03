@@ -1,0 +1,10 @@
+div {
+    font-family: "Noto Sans Thai", sans-serif;
+    .card{
+        transition: 0.4s;
+        cursor: pointer;
+    }
+    .card:hover{
+        transform: scale(1.02);
+    }
+}

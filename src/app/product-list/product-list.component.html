@@ -1,0 +1,12 @@
+<div class="container d-flex justify-content-between mt-5">
+    <div class="card" style="width: 18rem;" *ngFor="let product of products" (click)="navigateToProductDetail(product.productId)">
+        <div class="imgClass" style="width: 100%;">
+            <img [src]="product.imgSrc" alt="Product Image" style="width: 100%;">
+        </div>
+        <div class="detailClass p-3 mt-1">
+            <p class="fw-bold">{{ product.name }}</p>
+            <p> {{ product.price }} บาท</p>
+        </div>
+    </div>
+
+</div>
