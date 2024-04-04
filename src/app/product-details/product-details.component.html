@@ -3,17 +3,15 @@
 <section class="py-5">
     <div class="container px-4 px-lg-5 my-5">
         <div class="row gx-4 gx-lg-5 align-items-center">
-            <div class="col-md-5"><img class="card-img-top mb-5 mb-md-0"
-                [src]="product.imgSrc" alt="..." /></div>
-            <div class="col-md-6 " *ngIf="product">
-                <div class="small mb-1">Cagegory</div>
+            <div class="col-md-5 shadow p-3 mb-5 bg-body rounded"><img class="card-img-top mb-5 mb-md-0" [src]="product.imgSrc" alt="..." /></div>
+            <div class="col-md-6" *ngIf="product">
+                <div class="small mb-1">{{ product.category }}</div>
                 <h2>{{ product.name }}</h2>
+                <p>{{product.details}}</p>
                 <div class="fs-5 mb-5">
-                    <span>Price</span>
+                    <span>{{ product.price }} บาท</span>
                 </div>
-                <!-- <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium at dolorem
-                        quidem modi. Nam sequi consequatur obcaecati excepturi alias magni, accusamus eius blanditiis
-                        delectus ipsam minima ea iste laborum vero?</p> -->
+
                 <div class="d-flex">
                     <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1"
                         style="max-width: 3rem" />
