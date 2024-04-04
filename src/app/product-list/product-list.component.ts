@@ -13,21 +13,13 @@ export class ProductListComponent implements OnInit {
 
   // products: any;
 
-  constructor(private indexPageComponent: IndexPageComponent) {
+  constructor(private indexPageComponent: IndexPageComponent, private router: Router) {
 
   }
   ngOnInit(): void {
     this.products = this.indexPageComponent.getProducts();
   }
-  //   public showDogCategory(): void {
-  //   this.products = this.indexPageComponent.getProducts('dog');
-  // }
-
-  // public sortProductsDesc(): void {
-  //   this.products = this.products.sort((a: { price: number; }, b: { price: number; }) => a.price - b.price);
-  // }
-
-  // public sortProductsAsc() {
-  //   this.products = this.products.sort((a: { price: number; }, b: { price: number; }) => b.price - a.price);
-  // }
+  navigateToProduct(productId: number) {
+    this.router.navigate(['/product', productId]);
+  }
 }

@@ -5,6 +5,7 @@ import { IndexPageComponent } from './index-page/index-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { AccountComponent } from './account/account.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 const routes: Routes = [
   {
     path: '',
@@ -24,6 +25,11 @@ const routes: Routes = [
   {
     path: 'account',
     component: AccountComponent,
+    children: []
+  },
+  {
+    path: 'product/:productId',
+    component: ProductDetailsComponent,
     children: []
   },
   {

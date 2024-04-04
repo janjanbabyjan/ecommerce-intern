@@ -10,6 +10,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { AccountComponent } from './account/account.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { SlideBarComponent } from './slide-bar/slide-bar.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SlideBarComponent } from './slide-bar/slide-bar.component';
     NavbarComponent,
     ProductListComponent,
     AccountComponent,
-    SlideBarComponent
+    SlideBarComponent,
+    ProductDetailsComponent
   ],
   imports: [
     BrowserModule,

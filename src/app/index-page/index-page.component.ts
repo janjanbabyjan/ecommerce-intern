@@ -52,12 +52,17 @@ export class IndexPageComponent {
         price: 1490
       }
     ];
+
     if (category === 'all') {
       return products;
     }
 
     return products.filter(product => product.category === category);
   }
-
+  
+  getProductById(id: number): any {
+    const products = this.getProducts();
+    return products.find(product => product.productId === id);
+  }
 }
 
