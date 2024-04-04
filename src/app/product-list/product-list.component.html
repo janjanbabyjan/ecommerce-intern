@@ -1,12 +1,17 @@
-<div class="container d-flex justify-content-between mt-5">
-    <div class="card" style="width: 18rem;" *ngFor="let product of products">
-        <div class="imgClass" style="width: 100%;">
-            <img [src]="product.imgSrc" alt="Product Image" style="width: 100%;">
-        </div>
-        <div class="detailClass p-3 mt-1">
-            <p class="fw-bold">{{ product.name }}</p>
-            <p> {{ product.price }} บาท</p>
+<!-- <button (click)="sortProductsAsc()">Sort Asc</button>
+<button (click)="sortProductsDesc()">Desc Desc</button> -->
+<!-- <button (click)="showDogCategory()">Show Dog Category</button> -->
+
+<div class="container mt-4">
+    <div class="row col-12 d-flex justify-content-around">
+        <div class="card mb-4" style="width: 18rem;" *ngFor="let product of products">
+            <div class="imgClass" style="width: 100%;">
+                <img [src]="product.imgSrc" alt="Product Image" style="width: 100%;">
+            </div>
+            <div class="detailClass p-3 mt-1">
+                <p class="fw-bold">{{ product.name }}</p>
+                <p> {{ product.price }} บาท</p>
+            </div>
         </div>
     </div>
-
 </div>
