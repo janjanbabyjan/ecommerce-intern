@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IndexPageComponent } from '../index-page/index-page.component';
 import { Router } from '@angular/router';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -14,7 +15,7 @@ export class ProductListComponent implements OnInit {
 
   // products: any;
 
-  constructor(private indexPageComponent: IndexPageComponent, private router: Router) {
+  constructor(private productService:ProductService, private router: Router) {
 
   }
   ngOnInit(): void {
@@ -26,12 +27,15 @@ export class ProductListComponent implements OnInit {
   }
 
   showAllProducts() {
-    this.products = this.indexPageComponent.getProducts(); // แสดงสินค้าทั้งหมด
+    this.products = this.productService.getProducts(); // แสดงสินค้าทั้งหมด
   }
 
   filterBy(category: string) {
     if (category === 'dog' || category === 'cat' || category === 'smallpets') {
-      this.products = this.indexPageComponent.getProducts().filter((p: { category: string; }) => p.category === category);
+      this.productService.getProducts().subscribe((products: any[]) => {
+        this.products = products.filter((p: { category: string; }) => p.category === category);
+      });
     }
-  }
+}
+
 }

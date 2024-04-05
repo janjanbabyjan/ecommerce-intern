@@ -108,11 +108,11 @@ export class ProductService {
   ];
   
 
-  getProducts(): Observable<any[]> {
+  getProducts() {
     return of(this.products); //ส่งข้อมูลสินค้าในรูปแบบ Observable กลับไป
   }
 
-  getProductById(productId: number): Observable<any> { //ดึงข้อมูลสินค้าตาม id ของสินค้า
+  getProductById(productId: number) { //ดึงข้อมูลสินค้าตาม id ของสินค้า
     const product = this.products.find(p => p.productId === productId); //ค้นหาสินค้าที่ตรงกับ id ที่ระบุ
     return of(product); //ส่งข้อมูลสินค้าที่พบในรูปแบบ Observable กลับไป
   }
