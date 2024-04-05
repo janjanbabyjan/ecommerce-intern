@@ -6,6 +6,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { AccountComponent } from './account/account.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { RegisterComponent } from './register/register.component';
 const routes: Routes = [
   {
     path: '',
@@ -15,6 +16,11 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginPageComponent,
+    children: []
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
     children: []
   },
   {

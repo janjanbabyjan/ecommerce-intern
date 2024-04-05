@@ -1,10 +1,24 @@
 div {
     font-family: "Noto Sans Thai", sans-serif;
-    .card{
+
+    .card {
         transition: 0.4s;
         cursor: pointer;
     }
-    .card:hover{
+
+    .card:hover {
         transform: scale(1.02);
+    }
+
+    .btn {
+        background-color: #4D4D4D;
+        color: #ffffff;
+
+       
+
+    }
+    .btn:hover {
+        background-color: #808080;
+        color: #ffffff;
     }
 }

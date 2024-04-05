@@ -1,4 +1,23 @@
 div {
     font-family: "Noto Sans Thai", sans-serif;
 
+    .show {
+        background-color: #4D4D4D;
+        color: white;
+    }
+
+    .show:hover {
+        background-color: #888888;
+        color: white;
+    }
+
+    .save {
+        background-color: #4D4D4D;
+        color: white;
+    }
+
+    .save:hover {
+        background-color: #888888;
+        color: white;
+    }
 }

@@ -1,21 +1,14 @@
 <div class="container mt-4">
     <div class="row col-12 d-flex">
-        <div class="mb-4" style="width: 18rem;" >
-
-            
-            <button type="button" class="btn btn-dark " (click)="showAllProducts()">Show All</button>
-            <button (click)="filterBy('dog')">Dog</button>
-            <button (click)="filterBy('cat')">Cat</button>
-            <button (click)="filterBy('smallpets')">SmallPets</button>
+        <div class="col-md-3 mb-4 d-flex justify-content-between">
+            <button type="button" class="btn" (click)="showAllProducts()">Show All</button>
+            <button type="button" class="btn" (click)="filterBy('dog')">Dog</button>
+            <button type="button" class="btn" (click)="filterBy('cat')">Cat</button>
+            <button type="button" class="btn" (click)="filterBy('smallpets')">SmallPets</button>
         </div>
-
     </div>
 
     <div class="row col-12 d-flex justify-content-around">
-
-
-
-
         <div class="card mb-4" style="width: 18rem;" *ngFor="let product of products"
             (click)="navigateToProduct(product.productId)">
             <div class="imgClass" style="width: 100%;">

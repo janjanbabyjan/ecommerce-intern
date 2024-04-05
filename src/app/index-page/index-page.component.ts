@@ -9,11 +9,11 @@ import { ProductService } from '../product.service';
 export class IndexPageComponent implements OnInit {
 
   productList: any = []
- constructor(private productService : ProductService){
+  constructor(private productService: ProductService) {
 
- }
+  }
   ngOnInit(): void {
-  this.getProductList()
+    this.getProductList()
   }
 
   getProducts(category: string = 'all') { //กำหนดค่าเป็น all คือไม่ระบุหมวดหมู่

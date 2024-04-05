@@ -11,6 +11,8 @@ import { AccountComponent } from './account/account.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { SlideBarComponent } from './slide-bar/slide-bar.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { FooterComponent } from './footer/footer.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     ProductListComponent,
     AccountComponent,
     SlideBarComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    FooterComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

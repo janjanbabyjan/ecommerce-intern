@@ -4,7 +4,7 @@
     <div class="main-content position-relative max-height-vh-100 h-100">
         <div class="card shadow p-3 bg-body rounded mx-4">
             <div class="card-body">
-                <div class="row">   
+                <div class="row">
                     <div class="col-auto my-auto">
                         <div class="h-100">
                             <h5 class="mb-1">
@@ -35,7 +35,28 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid p-4">
+
+        <div class="card shadow p-3 bg-body rounded mx-4 mt-3">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-auto my-auto">
+                        <div class="h-100">
+                            <h5 class="mb-1">
+                                Your Profile
+                            </h5>
+                            <p style="color: rgb(85, 85, 85);"><span style="color: black;">Supattra Pangjun</span> |
+                                (+66) 81 234 5678 <br>
+                                @janjanbabyjan <br>
+                                supattra.pa@kkumail.com <br>
+                                666/39 T Primo Srinakarin 44000</p>
+                                <button type="button" class="btn show" (click)="toggleEditProfile()"> Edit Profile <i class="bi bi-pen"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid p-4" *ngIf="showEditProfile">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card shadow p-3 bg-body rounded">
@@ -72,7 +93,6 @@
                                         <input class="form-control" type="tel" placeholder="Enter your phone number">
                                     </div>
                                 </div>
-                                
                             </div>
                             <hr class="horizontal dark">
                             <p class="text-uppercase text-sm">Edit Address</p>
@@ -80,43 +100,38 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="example-text-input" class="form-control-label">Address</label>
-                                        <input class="form-control" type="text" placeholder=" 221B Baker Street"
-                                           >
+                                        <input class="form-control" type="text" placeholder=" 221B Baker Street">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="example-text-input" class="form-control-label">City</label>
-                                        <input class="form-control" type="text" placeholder="London" >
+                                        <input class="form-control" type="text" placeholder="London">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="example-text-input" class="form-control-label">Country</label>
-                                        <input class="form-control" type="text" placeholder="England" >
+                                        <input class="form-control" type="text" placeholder="England">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="example-text-input" class="form-control-label">Postal code</label>
-                                        <input class="form-control" type="text" placeholder="NW16XE" >
+                                        <input class="form-control" type="text" placeholder="NW16XE">
                                     </div>
                                 </div>
                                 <div class="d-flex justify-content-end mt-4">
-                                    <button type="submit" class="btn btn-dark text-wrap"
-                                        >Save</button>
+                                    <button type="submit" class="btn text-wrap save" >Save</button>
                                 </div>
                             </div>
-                            
-
 
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </div>
-
 </div>
+
+<app-footer></app-footer>
