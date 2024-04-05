@@ -107,7 +107,6 @@ export class ProductService {
     }
   ];
   
-
   getProducts() {
     return of(this.products); //ส่งข้อมูลสินค้าในรูปแบบ Observable กลับไป
   }

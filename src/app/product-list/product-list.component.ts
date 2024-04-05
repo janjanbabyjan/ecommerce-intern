@@ -11,15 +11,10 @@ import { ProductService } from '../product.service';
 export class ProductListComponent implements OnInit {
   @Input() products: any;
   
-
-
-  // products: any;
-
   constructor(private productService:ProductService, private router: Router) {
 
   }
   ngOnInit(): void {
-    // this.products = this.indexPageComponent.getProducts(); //เรียก getProducts จาก indexPageComponent เพื่อรับข้อมูลสินค้า
     console.log(this.products)
   }
   navigateToProduct(productId: number) { 
