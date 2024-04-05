@@ -115,4 +115,5 @@ export class ProductService {
     const product = this.products.find(p => p.productId === productId); //ค้นหาสินค้าที่ตรงกับ id ที่ระบุ
     return of(product); //ส่งข้อมูลสินค้าที่พบในรูปแบบ Observable กลับไป
   }
+  
 }

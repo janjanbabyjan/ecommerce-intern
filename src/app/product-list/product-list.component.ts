@@ -10,19 +10,26 @@ import { ProductService } from '../product.service';
 })
 export class ProductListComponent implements OnInit {
   @Input() products: any;
-  
-  constructor(private productService:ProductService, private router: Router) {
+
+
+
+  // products: any;
+
+  constructor(private productService: ProductService, private router: Router) {
 
   }
   ngOnInit(): void {
+    // this.products = this.indexPageComponent.getProducts(); //เรียก getProducts จาก indexPageComponent เพื่อรับข้อมูลสินค้า
     console.log(this.products)
   }
-  navigateToProduct(productId: number) { 
+  navigateToProduct(productId: number) {
     this.router.navigate(['/product', productId]); // ไปหน้ารายละเอียดสินค้าโดยใช้ productID โดยเรียกใช้ router.navigate productId
   }
 
   showAllProducts() {
-    this.products = this.productService.getProducts(); // แสดงสินค้าทั้งหมด
+    this.productService.getProducts().subscribe((products: any[]) => {
+      this.products = products;
+    });
   }
 
   filterBy(category: string) {
@@ -31,6 +38,5 @@ export class ProductListComponent implements OnInit {
         this.products = products.filter((p: { category: string; }) => p.category === category);
       });
     }
-}
-
+  }
 }

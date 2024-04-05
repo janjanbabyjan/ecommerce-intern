@@ -21,7 +21,7 @@ export class IndexPageComponent implements OnInit {
       .subscribe((product: any) => { // รับข้อมูลสินค้าที่ได้
         // this.product = product;
         this.productList = product
-        console.log(product)
+        // console.log(product)
       });
   }
 
