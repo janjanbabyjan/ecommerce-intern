@@ -106,13 +106,14 @@ export class ProductService {
       price: 180
     }
   ];
+  
 
   getProducts(): Observable<any[]> {
-    return of(this.products);
+    return of(this.products); //ส่งข้อมูลสินค้าในรูปแบบ Observable กลับไป
   }
 
-  getProductById(productId: number): Observable<any> {
-    const product = this.products.find(p => p.productId === productId);
-    return of(product);
+  getProductById(productId: number): Observable<any> { //ดึงข้อมูลสินค้าตาม id ของสินค้า
+    const product = this.products.find(p => p.productId === productId); //ค้นหาสินค้าที่ตรงกับ id ที่ระบุ
+    return of(product); //ส่งข้อมูลสินค้าที่พบในรูปแบบ Observable กลับไป
   }
 }

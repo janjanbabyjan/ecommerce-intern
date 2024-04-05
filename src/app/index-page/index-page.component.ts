@@ -1,13 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-index-page',
   templateUrl: './index-page.component.html',
   styleUrls: ['./index-page.component.scss']
 })
-export class IndexPageComponent {
+export class IndexPageComponent implements OnInit {
 
-  getProducts(category: string = 'all') {
+  productList: any = []
+ constructor(private productService : ProductService){
+
+ }
+  ngOnInit(): void {
+  this.getProductList()
+  }
+
+  getProducts(category: string = 'all') { //กำหนดค่าเป็น all คือไม่ระบุหมวดหมู่
     const products = [
       {
         productId: 1,
@@ -111,12 +120,22 @@ export class IndexPageComponent {
       return products;
     }
 
-    return products.filter(product => product.category === category);
+    return products.filter(product => product.category === category); // จะใช้ sort product อีกที 
   }
 
-  getProductById(id: number): any {
+  getProductList() {
+    this.productService.getProducts() // เรียก getProductById จาก productService เพื่อดึงข้อมูลสินค้า
+      .subscribe((product: any) => { // รับข้อมูลสินค้าที่ได้
+        // this.product = product;
+        this.productList = product
+        console.log(product)
+      });
+  }
+
+  getProductById(id: number): any { //ค้นหาสินค้าโคยใช้ productId 
     const products = this.getProducts();
-    return products.find(product => product.productId === id);
+    return products.find(product => product.productId === id); //จะ return สินค้าที่พบ โดยหาจาก Id ใน Products
+    //product = item
   }
 }
 

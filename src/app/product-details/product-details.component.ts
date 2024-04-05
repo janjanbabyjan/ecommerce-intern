@@ -8,23 +8,24 @@ import { ProductService } from '../product.service';
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent implements OnInit {
-  product: any; // Declare product variable
+  product: any;
 
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService // Inject ProductService
-  ) { }
-
-  ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      const productId = +params['productId'];
-      this.getProductDetails(productId);
+    private productService: ProductService  // รับข้อมูลมาเพื่อใช้ในคลาสนี้ (dependency injection)
+  ) {
+    this.route.params.subscribe(params => { //ตามการเปลี่ยนแปลงของ url
+      const productId = +params['productId']; // ดึง productId จาก url
+      this.getProductDetails(productId);   //เรียกใช้ productDetails จาก ProductID เพื่อดึงข้อมูลสินค้า
     });
   }
 
+  ngOnInit(): void {
+  }
+
   getProductDetails(productId: number): void {
-    this.productService.getProductById(productId)
-      .subscribe(product => {
+    this.productService.getProductById(productId) // เรียก getProductById จาก productService เพื่อดึงข้อมูลสินค้า
+      .subscribe(product => { // รับข้อมูลสินค้าที่ได้
         this.product = product;
       });
   }
