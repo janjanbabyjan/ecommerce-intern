@@ -1,44 +1,67 @@
 div {
-    font-family: "Noto Sans Thai", sans-serif;
+  font-family: "Noto Sans Thai", sans-serif;
 
-    .card {
-        transition: 0.4s;
-        cursor: pointer;
-    }
+  .card {
+    transition: 0.4s;
+    cursor: pointer;
+    width: 100%;
+  }
 
-    .card:hover {
-        transform: scale(1.02);
-    }
+  .card:hover {
+    transform: scale(1.02);
+  }
 
-    
-
-
-
+}
 
 
+
+
+button {
+  display: flex;
+  height: 3em;
+  width: 100px;
+  align-items: center;
+  justify-content: center;
+  background-color: #eeeeee4b;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  border: none;
+  background: #fff;
+
+  &:hover {
+    box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
+    transform: translateY(-2px);
+  }
 
 
 }
 
-button {
-    display: flex;
-    height: 3em;
-    width: 100px;
-    align-items: center;
-    justify-content: center;
-    background-color: #eeeeee4b;
-    border-radius: 3px;
-    letter-spacing: 1px;
-    transition: all 0.2s linear;
-    cursor: pointer;
-    border: none;
-    background: #fff;
-  
-    &:hover {
-      box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
-      transform: translateY(-2px);
-    }
-  
+@media (max-width: 575.98px) {
+  .card-product-box {
+    flex: 0 0 45%;
+    max-width: 45%;
+  }
+  .filterBtn button{
+    font-size: 12px;
+  }
+  .detailClass p{
+    font-size: 12px;
+  }
+}
 
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .card-product-box {
+    flex: 0 0 30%;
+    max-width: 30%;
   }
   
+}
+
+@media (min-width: 992px) {
+  .card-product-box {
+    flex: 0 0 23%;
+    max-width: 23%;
+  }
+}

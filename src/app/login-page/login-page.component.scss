@@ -1,59 +1,198 @@
-section {
-  font-family: "Noto Sans Thai", sans-serif;
+// Define variables for colors and font families
+$main-font: 'Poppins', sans-serif;
+$section-font: "Noto Sans Thai", sans-serif;
+$background-color: #ececec;
+$link-color: #000;
+$link-hover-color: #000;
+$submit-hover-color: #fff;
+$submit-hover-background: rgba(37, 95, 156, 0.937);
+$input-border-color: rgba(0, 0, 0, 0.2);
+$input-focus-color: #743ae1;
+$input-valid-color: #5d5076;
+
+// Define mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+// Apply mixins and variables
 body {
-  font-family: 'Poppins', sans-serif;
-  background: #ececec;
-
-  
+  font-family: $main-font;
+  background: $background-color;
 }
 
-.box-area {
-  width: 930px;
+section {
+  font-family: $section-font;
 }
 
-
-.right-box {
-  padding: 40px 30px 40px 40px;
+.wrapper {
+  background: $background-color;
+  padding: 0 20px;
 }
 
-::placeholder {
-  font-size: 16px;
+.main {
+  @include flex-center;
+  min-height: 100vh;
 }
 
-.rounded-4 {
-  border-radius: 20px;
+.side-image {
+  background-image: url("/assets/pet-login.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 10px 0 0 10px;
+  position: relative;
 }
 
-.rounded-5 {
-  border-radius: 30px;
+.row {
+  width: 900px;
+  height: 550px;
+  border-radius: 10px;
+  background: #fff;
+  padding: 0px;
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
 }
 
-.login {
-  background-color: #F1AC54;
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.login:hover {
-  background-color: #f4b96d;
-
+.text p {
+  color: #fff;
+  font-size: 20px;
 }
 
+i {
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.right {
+  @include flex-center;
+  position: relative;
+}
+
+.input-box {
+  width: 330px;
+  box-sizing: border-box;
+}
+
+img {
+  width: 35px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.input-box header {
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0 10px;
+}
+
+.input {
+  height: 45px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid $input-border-color;
+  outline: none;
+  margin-bottom: 20px;
+  color: #40414a;
+
+  &:focus,
+  &:valid {
+    border-bottom: 1px solid $input-focus-color;
+  }
+}
+
+.input-box .input-field label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.input-field input:focus~label,
+.input-field input:valid~label {
+  top: -10px;
+  font-size: 13px;
+}
+
+.input-field input:valid~label {
+  color: $input-valid-color;
+}
+
+.submit {
+  border: none;
+  outline: none;
+  height: 45px;
+  background: $background-color;
+  border-radius: 5px;
+  transition: .4s;
+
+  &:hover {
+    background: $submit-hover-background;
+    color: $submit-hover-color;
+  }
+}
+
+.signin {
+  text-align: center;
+  font-size: small;
+  margin-top: 25px;
+}
+
+span a {
+  text-decoration: none;
+  font-weight: 700;
+  color: $link-color;
+  transition: .5s;
+
+  &:hover {
+    text-decoration: underline;
+    color: $link-hover-color;
+  }
+}
 
 @media only screen and (max-width: 768px) {
-  .box-area {
-    margin: 0 10px;
+  .side-image {
+    border-radius: 10px 10px 0 0;
   }
 
-  .left-box {
-    height: 100px;
-    overflow: hidden;
+  img {
+    width: 35px;
+    position: absolute;
+    top: 20px;
+    left: 47%;
   }
 
-  .right-box {
-    padding: 20px;
+  .text {
+    position: absolute;
+    top: 70%;
+    text-align: center;
   }
 
+  .text p,
+  i {
+    font-size: 16px;
+  }
 
-
+  .row {
+    max-width: 420px;
+    width: 100%;
+  }
 }

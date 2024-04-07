@@ -1,6 +1,6 @@
-<div class="container mt-4">
-    <div class="row col-12 d-flex">
-        <div class="col-md-5 mb-4 d-flex justify-content-start">
+<div class="container mt-4 d-flex justify-content-around" style="flex-wrap: wrap ;">
+    <div class="row col-12 d-flex" style="width: 100%;">
+        <div class="col-md-8 mb-4 d-flex justify-content-start filterBtn">
             <button type="button" class="btn" (click)="showAllProducts()">Show All</button>
             <button type="button" class="btn" (click)="filterBy('dog')">Dog</button>
             <button type="button" class="btn" (click)="filterBy('cat')">Cat</button>
@@ -8,8 +8,8 @@
         </div>
     </div>
 
-    <div class="row col-12 d-flex justify-content-around">
-        <div class="card mb-4" style="width: 18rem;" *ngFor="let product of products"
+    <div class="row col-12 d-flex justify-content-around card-product">
+        <div class="card mb-4 card-product-box" style="width: 18rem;" *ngFor="let product of products"
             (click)="navigateToProduct(product.productId)">
             <div class="imgClass" style="width: 100%;">
                 <img [src]="product.imgSrc" alt="Product Image" style="width: 100%; margin-top: 1rem;">
