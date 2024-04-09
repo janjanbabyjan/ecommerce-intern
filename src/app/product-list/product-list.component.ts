@@ -13,13 +13,10 @@ export class ProductListComponent implements OnInit {
 
 
 
-  // products: any;
-
   constructor(private productService: ProductService, private router: Router) {
 
   }
   ngOnInit(): void {
-    // this.products = this.indexPageComponent.getProducts(); //เรียก getProducts จาก indexPageComponent เพื่อรับข้อมูลสินค้า
     console.log(this.products)
   }
   navigateToProduct(productId: number) {
@@ -39,4 +36,13 @@ export class ProductListComponent implements OnInit {
       });
     }
   }
+
+  sortByPrice(order: string) {
+    if (order === 'lowToHigh') {
+      this.products.sort((a: { price: number }, b: { price: number }) => a.price - b.price);
+    } else if (order === 'highToLow') {
+      this.products.sort((a: { price: number }, b: { price: number }) => b.price - a.price);
+    }
+  }
+
 }

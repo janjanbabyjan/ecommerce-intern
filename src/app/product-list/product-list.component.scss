@@ -13,10 +13,7 @@ div {
 
 }
 
-
-
-
-button {
+.category-btn button {
   display: flex;
   height: 3em;
   width: 100px;
@@ -34,8 +31,27 @@ button {
     box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
     transform: translateY(-2px);
   }
+}
 
+.sortByPrice {
+  margin-left: 1rem;
 
+  p {
+    margin-right: 1rem;
+  }
+
+  label {
+    margin-right: 1rem;
+
+  }
+}
+
+.card-product-box .detailClass p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* กำหนดจำนวนบรรทัดสูงสุดที่ต้องการให้แสดง */
+  -webkit-box-orient: vertical;
 }
 
 @media (max-width: 575.98px) {
@@ -43,20 +59,35 @@ button {
     flex: 0 0 45%;
     max-width: 45%;
   }
-  .filterBtn button{
+
+  .filterBtn button {
     font-size: 12px;
   }
-  .detailClass p{
+
+  .detailClass p {
     font-size: 12px;
+  }
+
+  .sortByPrice p {
+    font-size: 12px;
+  }
+
+  .sortByPrice label {
+    font-size: 12px;
+
   }
 }
+
+
+
+
 
 @media (min-width: 576px) and (max-width: 991.98px) {
   .card-product-box {
     flex: 0 0 30%;
     max-width: 30%;
   }
-  
+
 }
 
 @media (min-width: 992px) {

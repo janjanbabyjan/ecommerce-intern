@@ -1,11 +1,22 @@
 <div class="container mt-4 d-flex justify-content-around" style="flex-wrap: wrap ;">
     <div class="row col-12 d-flex" style="width: 100%;">
-        <div class="col-md-8 mb-4 d-flex justify-content-start filterBtn">
+        <div class="col-md-8 mb-4 d-flex justify-content-start filterBtn category-btn">
             <button type="button" class="btn" (click)="showAllProducts()">Show All</button>
             <button type="button" class="btn" (click)="filterBy('dog')">Dog</button>
             <button type="button" class="btn" (click)="filterBy('cat')">Cat</button>
             <button type="button" class="btn" (click)="filterBy('smallpets')">SmallPets</button>
         </div>
+        <div class="col-md-10 mb-4 d-flex justify-content-start filterBtn sortByPrice">
+            <p>Sort by Price</p>
+            <label>
+                <input type="radio" name="sortByPrice" (click)="sortByPrice('lowToHigh')"> Low to High
+            </label>
+            <label>
+                <input type="radio" name="sortByPrice" (click)="sortByPrice('highToLow')"> High to Low
+            </label>
+        </div>
+        
+
     </div>
 
     <div class="row col-12 d-flex justify-content-around card-product">
