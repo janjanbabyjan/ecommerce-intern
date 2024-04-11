@@ -10,3 +10,15 @@ nav {
     }
 
 }
+
+@media (max-width: 767px) {
+    .nav-link p {
+        display: block; /* Show the <p> tag content */
+    }
+}
+
+@media (min-width: 800px) {
+    .nav-link p {
+        display: none; /* Hide the <p> tag content on larger screens */
+    }
+}

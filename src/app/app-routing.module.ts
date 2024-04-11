@@ -7,6 +7,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { AccountComponent } from './account/account.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { RegisterComponent } from './register/register.component';
+import { CartComponent } from './cart/cart.component';
 const routes: Routes = [
   {
     path: '',
@@ -31,6 +32,11 @@ const routes: Routes = [
   {
     path: 'account',
     component: AccountComponent,
+    children: []
+  },
+  {
+    path: 'cart',
+    component: CartComponent,
     children: []
   },
   {

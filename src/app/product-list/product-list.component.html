@@ -6,6 +6,7 @@
             <button type="button" class="btn" (click)="filterBy('cat')">Cat</button>
             <button type="button" class="btn" (click)="filterBy('smallpets')">SmallPets</button>
         </div>
+        
         <div class="col-md-10 mb-4 d-flex justify-content-start filterBtn sortByPrice">
             <p>Sort by Price</p>
             <label>
@@ -15,7 +16,7 @@
                 <input type="radio" name="sortByPrice" (click)="sortByPrice('highToLow')"> High to Low
             </label>
         </div>
-        
+
 
     </div>
 
@@ -23,11 +24,11 @@
         <div class="card mb-4 card-product-box" style="width: 18rem;" *ngFor="let product of products"
             (click)="navigateToProduct(product.productId)">
             <div class="imgClass" style="width: 100%;">
-                <img [src]="product.imgSrc" alt="Product Image" style="width: 100%; margin-top: 1rem;">
+                <img [src]="product.imgSrc" alt="Product Image" style="width: 100%; margin-top: 1.5rem;">
             </div>
             <div class="detailClass p-3 mt-1">
                 <p class="fw-bold">{{ product.name }}</p>
-                <p> {{ product.price }} บาท</p>
+                <p> {{ product.price | currency:'':'':'1.0-0'}} บาท</p>
             </div>
         </div>
     </div>

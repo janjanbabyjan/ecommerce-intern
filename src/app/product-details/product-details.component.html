@@ -10,7 +10,7 @@
                 <h2 style="font-weight: 700;">{{ product.name }}</h2>
                 <p>{{product.details}}</p>
                 <div class="fs-5 mb-5">
-                    <span style="font-weight: 700; font-size: 30px;">฿ {{ product.price }}</span>
+                    <span style="font-weight: 700; font-size: 30px;">{{ product.price | currency:'':'':'1.0-0'}} บาท</span>
                 </div>
 
                 <div class="d-flex">

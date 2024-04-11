@@ -13,6 +13,7 @@ import { SlideBarComponent } from './slide-bar/slide-bar.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { FooterComponent } from './footer/footer.component';
 import { RegisterComponent } from './register/register.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +26,14 @@ import { RegisterComponent } from './register/register.component';
     SlideBarComponent,
     ProductDetailsComponent,
     FooterComponent,
-    RegisterComponent
+    RegisterComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
+  
 
   providers: [],
   bootstrap: [AppComponent]
