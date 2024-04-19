@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../product.service';
+import { ProductService } from '../service/product.service';
+
 
 @Component({
   selector: 'app-index-page',

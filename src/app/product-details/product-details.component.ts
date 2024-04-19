@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProductService } from '../product.service';
+import { ProductService } from '../service/product.service';
+
 
 @Component({
   selector: 'app-product-details',
@@ -25,7 +26,7 @@ export class ProductDetailsComponent implements OnInit {
 
   getProductDetails(productId: number): void {
     this.productService.getProductById(productId) // เรียก getProductById จาก productService เพื่อดึงข้อมูลสินค้า
-      .subscribe(product => { // รับข้อมูลสินค้าที่ได้
+      .subscribe((product: any) => { // รับข้อมูลสินค้าที่ได้
         this.product = product;
       });
   }

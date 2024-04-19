@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IndexPageComponent } from '../index-page/index-page.component';
 import { Router } from '@angular/router';
-import { ProductService } from '../product.service';
+import { ProductService } from '../service/product.service';
 
 @Component({
   selector: 'app-product-list',

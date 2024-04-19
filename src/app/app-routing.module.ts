@@ -17,12 +17,12 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginPageComponent,
-    children: []
+    // children: []
   },
   {
     path: 'register',
     component: RegisterComponent,
-    children: []
+    // children: []
   },
   {
     path: 'index',
@@ -32,17 +32,18 @@ const routes: Routes = [
   {
     path: 'account',
     component: AccountComponent,
-    children: []
+    // children: []
   },
   {
     path: 'cart',
     component: CartComponent,
-    children: []
+    // children: []
   },
+
   {
     path: 'product/:productId',
     component: ProductDetailsComponent,
-    children: []
+    // children: []
   },
   {
     path: '**', redirectTo: 'index', pathMatch: 'full'

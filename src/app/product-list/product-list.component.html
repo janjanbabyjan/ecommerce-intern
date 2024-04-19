@@ -24,10 +24,10 @@
         <div class="card mb-4 card-product-box" style="width: 18rem;" *ngFor="let product of products"
             (click)="navigateToProduct(product.productId)">
             <div class="imgClass" style="width: 100%;">
-                <img [src]="product.imgSrc" alt="Product Image" style="width: 100%; margin-top: 1.5rem;">
+                <img [src]="product.product_img" alt="Product Image" style="width: 100%; margin-top: 1.5rem;">
             </div>
             <div class="detailClass p-3 mt-1">
-                <p class="fw-bold">{{ product.name }}</p>
+                <p class="fw-bold">{{ product.pname }}</p>
                 <p> {{ product.price | currency:'':'':'1.0-0'}} บาท</p>
             </div>
         </div>

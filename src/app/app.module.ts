@@ -14,7 +14,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { FooterComponent } from './footer/footer.component';
 import { RegisterComponent } from './register/register.component';
 import { CartComponent } from './cart/cart.component';
-
+import { ProductService } from './service/product.service';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,11 +32,12 @@ import { CartComponent } from './cart/cart.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   
 
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
