@@ -1,5 +1,5 @@
 export class Product {
-    id: number | undefined;
+    pid: number | undefined;
     pname: string | undefined;
     pdetails: string | undefined;
     cid: number | undefined;

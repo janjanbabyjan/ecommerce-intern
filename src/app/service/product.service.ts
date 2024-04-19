@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable, of } from 'rxjs';
-import { Product } from '../model/product.mode';
+import { Product } from '../model/product.model';
 
 
 @Injectable({
@@ -18,8 +18,8 @@ export class ProductService {
     return this.http.get<Product[]>(this.apiUrl + '/product');
   }
 
-  getProductById(productId: number) { //ดึงข้อมูลสินค้าตาม id ของสินค้า
-    const product = this.products.find((p: { productId: number; }) => p.productId === productId); //ค้นหาสินค้าที่ตรงกับ id ที่ระบุ
+  getProductById(pid: number) { //ดึงข้อมูลสินค้าตาม id ของสินค้า
+    const product = this.products.find((p: { pid: number; }) => p.pid === pid); //ค้นหาสินค้าที่ตรงกับ id ที่ระบุ
     return of(product); //ส่งข้อมูลสินค้าที่พบในรูปแบบ Observable กลับไป
   }
 

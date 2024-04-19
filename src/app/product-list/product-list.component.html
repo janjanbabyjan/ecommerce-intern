@@ -22,7 +22,7 @@
 
     <div class="row col-12 d-flex justify-content-around card-product">
         <div class="card mb-4 card-product-box" style="width: 18rem;" *ngFor="let product of products"
-            (click)="navigateToProduct(product.productId)">
+            (click)="navigateToProduct(product.pid)">
             <div class="imgClass" style="width: 100%;">
                 <img [src]="product.product_img" alt="Product Image" style="width: 100%; margin-top: 1.5rem;">
             </div>
