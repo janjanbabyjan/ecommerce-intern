@@ -41,7 +41,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'product/:productId',
+    path: 'product/:pid',
     component: ProductDetailsComponent,
     // children: []
   },

@@ -6,9 +6,9 @@
             <div class="col-md-5 shadow p-3 mb-5 bg-body rounded"><img class="card-img-top mb-5 mb-md-0"
                     [src]="product.product_img" alt="..." /></div>
             <div class="col-md-6">
-                <div class="small mb-1">{{ product.category }}</div>
+                <div class="small mb-1">{{ product.category?.cname }}</div>
                 <h2 style="font-weight: 700;">{{ product.pname }}</h2>
-                <p>{{product.details}}</p>
+                <p>{{product.pdetails}}</p>
                 <div class="fs-5 mb-5">
                     <span style="font-weight: 700; font-size: 30px;">{{ product.price | currency:'':'':'1.0-0'}} บาท</span>
                 </div>

@@ -19,8 +19,8 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.products)
   }
-  navigateToProduct(productId: number) {
-    this.router.navigate(['/product', productId]); // ไปหน้ารายละเอียดสินค้าโดยใช้ productID โดยเรียกใช้ router.navigate productId
+  navigateToProduct(pid: any) {
+    this.router.navigate(['/product', pid]); // ไปหน้ารายละเอียดสินค้าโดยใช้ pid โดยเรียกใช้ router.navigate pid
   }
 
   showAllProducts() {

@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AccountComponent {
   showEditProfile: boolean = false;
+  users: any;
 
   toggleEditProfile() {
     this.showEditProfile = !this.showEditProfile;
