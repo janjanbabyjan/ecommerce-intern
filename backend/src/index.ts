@@ -1,5 +1,4 @@
 import { pid } from "process";
-import { Users } from "./entity/Users";
 
 const express = require('express');
 const cors = require('cors');
@@ -21,10 +20,11 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.use(cors({
-    origin: 'http://localhost:4200' // Replace with your client-side origin
+    origin: 'http://localhost:4200'
 }));
 
 AppDataSource.initialize().then(async () => {
+
     app.get('/index', async (req, res) => {
         const product = await AppDataSource.manager.createQueryBuilder(Product, 'pd')
             .leftJoinAndSelect('pd.cagetogory', 'category')
@@ -35,18 +35,13 @@ AppDataSource.initialize().then(async () => {
                 'product.price'
             ])
             .getRawMany();
-
-        res.json(Product);
+        res.json(product);
     });
 
-    // app.get('/useradd', async (req, res) => {
-    //     const userAddress = await AppDataSource.manager.find(UserAddress);
-    //     res.json(userAddress);
-    // });
 
-    app.get('/users', async (req, res) => {
-        const users = await AppDataSource.manager.find(Users);
-        res.json(users);
+    app.get('/products', async (req, res) => {
+        const product = await AppDataSource.manager.find(Product);
+        res.json(product);
     });
 
     app.get('/product/:pid', async (req, res) => {
@@ -58,31 +53,16 @@ AppDataSource.initialize().then(async () => {
             .select([
                 'product.pid',
                 'product.pname',
-                'category.cname', // Include the category name
+                'product.pdetails',
+                'category.cname',
                 'product.price',
+                'product_img',
             ])
             .getRawOne();
         res.json(product);
     });
 
-    // app.get('/account', async (req, res) => {
-    //     const users = await AppDataSource.manager
-    //         .createQueryBuilder(Users, 'user')
-    //         .leftJoinAndSelect('user.userAddress', 'userAddress')
-    //         .select([
-    //             'user.userid',
-    //             'user.fname',
-    //             'user.lname',
-    //             'user.email',
-    //             'user.password',
-    //             'user.phone',
-    //             'user.user_img',
-    //             'userAddress.address_id'
-    //         ])
-    //         .getRawOne();
-    //     res.json(users);
-    // });
-    
+
 });
 
 app.listen(3000, () => {

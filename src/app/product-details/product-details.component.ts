@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../service/product.service';
+import { Product } from '../model/product.model';
 
 
 @Component({
@@ -18,17 +19,17 @@ export class ProductDetailsComponent implements OnInit {
 
   }
 
-  ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      const pid = +params['pid'];
-      this.getProductDetails(pid);
-    });
-  }
-
-  getProductDetails(pid: number): void {
-    this.productService.getProductById(pid)
-      .subscribe((product: any) => {
-        this.product = product;
-      });
-  }
+ ngOnInit(): void {
+  this.route.params.subscribe(params => {
+    const pid = +params['pid'];
+    this.getProductDetails(pid);
+  });
 }
+
+getProductDetails(pid: number) {
+  this.productService.getProductById(pid)
+    .subscribe((product: Product) => {
+      this.product = product;
+    });
+}
+}   
