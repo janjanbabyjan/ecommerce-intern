@@ -31,9 +31,9 @@ export class ProductListComponent implements OnInit {
   }
 
   filterBy(category: string) {
-    if (category === 'dog' || category === 'cat' || category === 'smallpets') {
+    if (category === 'Dog' || category === 'Cat' || category === 'SmallPets') {
       this.productService.getProducts().subscribe((products: any[]) => {
-        this.products = products.filter((p: { category: string; }) => p.category === category);
+        this.products = products.filter((p: { category: { cname: string }; }) => p.category.cname === category);
       });
     }
   }
