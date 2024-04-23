@@ -18,7 +18,7 @@
                 <div class="row">
                     <div class="col-auto">
                         <div class="avatar avatar-xl position-relative">
-                            <img src="./assets/petshop-logo.png" alt="profile_image" class=" shadow-sm"
+                            <img [src]="users.user_img" alt="profile_image" class=" shadow-sm"
                                 style="width: 100px;">
                         </div>
                     </div>
@@ -44,11 +44,14 @@
                             <h5 class="mb-1">
                                 Your Profile
                             </h5>
-                            <p style="color: rgb(85, 85, 85);"><span style="color: black;">Supattra Pangjun</span> |
-                                (+66) 81 234 5678 <br>
-                                @janjanbabyjan <br>
-                                supattra.pa@kkumail.com <br>
-                                666/39 T Primo Srinakarin 44000</p>
+                            <p style="color: rgb(85, 85, 85);">
+                                <span style="color: black;">{{ users?.fname }} {{ users?.lname }}</span> |
+                                {{ users?.phone }} <br>
+                                @{{ users?.username }} <br>
+                                {{ users?.email }} <br>
+                                {{ users?.userAddress?.city }}, {{ users?.userAddress?.country }} {{
+                                users?.userAddress?.postal_code }}
+                            </p>
 
                             <button class="Btn" (click)="toggleEditProfile()">
                                 <div class="sign">

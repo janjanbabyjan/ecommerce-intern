@@ -18,8 +18,8 @@ export class IndexPageComponent implements OnInit {
   }
 
   getProductList() {
-    this.productService.getProducts() // เรียก getProductById จาก productService เพื่อดึงข้อมูลสินค้า
-      .subscribe((product: any) => { // รับข้อมูลสินค้าที่ได้
+    this.productService.getProducts()
+      .subscribe((product: any) => { 
         this.productList = product
       });
   }

@@ -17,7 +17,7 @@ export class ProductService {
   }
 
   getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.apiUrl + '/products');
+    return this.http.get<Product[]>(this.apiUrl + '/index');
   }
 
 
@@ -26,6 +26,6 @@ export class ProductService {
   }
 
   getUsers(): Observable<Users[]> {
-    return this.http.get<Users[]>(this.apiUrl + '/users');
+    return this.http.get<Users[]>(this.apiUrl + '/account');
   }
 }

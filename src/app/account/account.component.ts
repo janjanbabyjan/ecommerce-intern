@@ -18,8 +18,10 @@ export class AccountComponent implements OnInit {
   getUsers() {
     this.productService.getUsers()
       .subscribe((users: any) => {
-        this.getUsers = users
+        this.users = users.find((users: { userid: number; }) => users.userid === 1);
+
       });
+      
   }
 
   showEditProfile: boolean = false;

@@ -27,23 +27,10 @@ app.use(cors({
 
 AppDataSource.initialize().then(async () => {
 
+
     app.get('/index', async (req, res) => {
-        const product = await AppDataSource.manager.createQueryBuilder(Product, 'pd')
-            .leftJoinAndSelect('pd.cagetogory', 'category')
-            .select([
-                'product.pid',
-                'product.pname',
-                'category.cname',
-                'product.price'
-            ])
-            .getRawMany();
+        const product = await AppDataSource.manager.find(Product);
         res.json(product);
-    });
-
-
-    app.get('/users', async (req, res) => {
-        const users = await AppDataSource.manager.find(Users);
-        res.json(users);
     });
 
     app.get('/product/:pid', async (req, res) => {
@@ -64,52 +51,37 @@ AppDataSource.initialize().then(async () => {
         res.json(product);
     });
 
+    // app.get('/account', async (req, res) => {
+    //     const users = await AppDataSource.manager.find(Users);
+    //     res.json(users);
+    // });
 
     // app.get('/account', async (req, res) => {
-
     //     const users = await AppDataSource.manager
     //         .createQueryBuilder(Users, 'user')
     //         .innerJoinAndSelect('user.userAddress', 'userAddress')
-    //         .getMany();
-    //         //console.log(users)
-    //         // .select([
-    //         //     'users.userid',
-    //         //     'users.fname',
-    //         //     'users.lname',
-    //         //     'users.username',
-    //         //     'users.email',
-    //         //     'users.password',
-    //         //     'users.phone',
-    //         //     'useraddress.city',
-    //         //     'useraddress.country',
-    //         //     'useraddress.postalcode'
-    //         // ])
-    //         // .getRawOne();
-    //     // res.json(users);
+    //         .select([
+    //             'users.userid',
+    //             'users.fname',
+    //             'users.lname',
+    //             'users.username',
+    //             'users.email',
+    //             'users.password',
+    //             'users.phone',
+    //             'useraddress.city',
+    //             'useraddress.country',
+    //             'useraddress.postalcode'
+    //         ])
+    //         .getRawOne();
+    //     res.json(users);
     // });
-
     app.get('/account', async (req, res) => {
-
         const users = await AppDataSource.manager
-            .createQueryBuilder(Users, 'user')
-            .innerJoinAndSelect('user.userAddress', 'userAddress')
-            .getMany();
-            //console.log(users)
-            // .select([
-            //     'users.userid',
-            //     'users.fname',
-            //     'users.lname',
-            //     'users.username',
-            //     'users.email',
-            //     'users.password',
-            //     'users.phone',
-            //     'useraddress.city',
-            //     'useraddress.country',
-            //     'useraddress.postalcode'
-            // ])
-            // .getRawOne();
-        // res.json(users);
+            .getRepository(Users)
+            .find({ relations: ['userAddress'] });
+        res.json(users);
     });
+    
 
 });
 
