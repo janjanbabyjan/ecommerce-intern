@@ -1,10 +1,12 @@
+import { log } from "console";
 import { pid } from "process";
+import { UserAddress } from "./entity/UserAddress";
 
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const { AppDataSource } = require('./data-source');
-const { UserAddress } = require('./entity/UserAddress');
+const { Users } = require('./entity/Users');
 const { Product } = require('./entity/Product');
 
 const app = express();
@@ -39,9 +41,9 @@ AppDataSource.initialize().then(async () => {
     });
 
 
-    app.get('/products', async (req, res) => {
-        const product = await AppDataSource.manager.find(Product);
-        res.json(product);
+    app.get('/users', async (req, res) => {
+        const users = await AppDataSource.manager.find(Users);
+        res.json(users);
     });
 
     app.get('/product/:pid', async (req, res) => {
@@ -62,6 +64,52 @@ AppDataSource.initialize().then(async () => {
         res.json(product);
     });
 
+
+    // app.get('/account', async (req, res) => {
+
+    //     const users = await AppDataSource.manager
+    //         .createQueryBuilder(Users, 'user')
+    //         .innerJoinAndSelect('user.userAddress', 'userAddress')
+    //         .getMany();
+    //         //console.log(users)
+    //         // .select([
+    //         //     'users.userid',
+    //         //     'users.fname',
+    //         //     'users.lname',
+    //         //     'users.username',
+    //         //     'users.email',
+    //         //     'users.password',
+    //         //     'users.phone',
+    //         //     'useraddress.city',
+    //         //     'useraddress.country',
+    //         //     'useraddress.postalcode'
+    //         // ])
+    //         // .getRawOne();
+    //     // res.json(users);
+    // });
+
+    app.get('/account', async (req, res) => {
+
+        const users = await AppDataSource.manager
+            .createQueryBuilder(Users, 'user')
+            .innerJoinAndSelect('user.userAddress', 'userAddress')
+            .getMany();
+            //console.log(users)
+            // .select([
+            //     'users.userid',
+            //     'users.fname',
+            //     'users.lname',
+            //     'users.username',
+            //     'users.email',
+            //     'users.password',
+            //     'users.phone',
+            //     'useraddress.city',
+            //     'useraddress.country',
+            //     'useraddress.postalcode'
+            // ])
+            // .getRawOne();
+        // res.json(users);
+    });
 
 });
 

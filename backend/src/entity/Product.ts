@@ -33,6 +33,4 @@ export class Product {
     category: Category;
     cart: any;
 
-    user: Users;
-
 }

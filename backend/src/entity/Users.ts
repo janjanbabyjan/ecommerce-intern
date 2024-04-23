@@ -25,10 +25,10 @@ export class Users {
     @Column({ nullable: true })
     phone: string;
 
-    @Column({ nullable: true, type: "bytea" })
-    user_img: Buffer;
+    @Column({ nullable: true })
+    user_img: string;
 
-    @OneToOne(() => UserAddress, userAddress => userAddress.user, { cascade: true })
+    @OneToOne(() => UserAddress, userAddress => userAddress.user)
     @JoinColumn({ name: "address_id" })
     userAddress: UserAddress;
 
